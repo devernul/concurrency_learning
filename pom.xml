@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>multithreading_course</module>
+        <module>multithreading_and_parallel_computing</module>
     </modules>
 
     <properties>
