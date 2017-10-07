@@ -1,4 +1,4 @@
-package ua.kruart.basic_multithreading._04_join;
+package ua.kruart._01_basic_multithreading._04_join;
 
 /**
  * Created by kruart on 07.10.2017.

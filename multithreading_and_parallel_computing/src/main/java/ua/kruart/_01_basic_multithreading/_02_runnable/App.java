@@ -1,16 +1,16 @@
-package ua.kruart.basic_multithreading._03_thread;
+package ua.kruart._01_basic_multithreading._02_runnable;
 
 /**
  * Created by kruart on 07.10.2017.
  */
 public class App {
     public static void main(String[] args) {
-        new Runner1().start();
-        new Runner2().start();
+        new Thread(new Runner1()).start();
+        new Thread(new Runner2()).start();
     }
 }
 
-class Runner1 extends Thread {
+class Runner1 implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
@@ -19,7 +19,7 @@ class Runner1 extends Thread {
     }
 }
 
-class Runner2 extends Thread {
+class Runner2 implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {

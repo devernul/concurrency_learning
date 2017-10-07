@@ -1,28 +1,27 @@
-package ua.kruart.basic_multithreading._01_sequential_processing;
+package ua.kruart._01_basic_multithreading._03_thread;
 
 /**
  * Created by kruart on 07.10.2017.
  */
 public class App {
     public static void main(String[] args) {
-        Runner1 runner1 = new Runner1();
-        Runner2 runner2 = new Runner2();
-
-        runner1.startRunning();
-        runner2.startRunning();
+        new Runner1().start();
+        new Runner2().start();
     }
 }
 
-class Runner1 {
-    public void startRunning() {
+class Runner1 extends Thread {
+    @Override
+    public void run() {
         for (int i = 0; i < 10; i++) {
             System.out.println("Runner1: " + i);
         }
     }
 }
 
-class Runner2 {
-    public void startRunning() {
+class Runner2 extends Thread {
+    @Override
+    public void run() {
         for (int i = 0; i < 10; i++) {
             System.out.println("Runner2: " + i);
         }
