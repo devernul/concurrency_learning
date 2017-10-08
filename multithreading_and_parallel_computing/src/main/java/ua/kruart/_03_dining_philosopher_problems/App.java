@@ -13,16 +13,16 @@ public class App {
 
         try {
             philosophers = new Philosopher[Constants.NUMBER_OF_PHILOSOPHERS];
-            Chopstick[] chopstick = new Chopstick[Constants.NUMBER_OF_PHILOSOPHERS];
+            ChopStick[] chopSticks = new ChopStick[Constants.NUMBER_OF_CHOPSTICKS];
 
             for (int i = 0; i < Constants.NUMBER_OF_CHOPSTICKS; i++) {
-                chopstick[i] = new Chopstick(i);
+                chopSticks[i] = new ChopStick(i);
             }
 
             executorService = Executors.newFixedThreadPool(Constants.NUMBER_OF_PHILOSOPHERS);
 
             for (int i = 0; i < Constants.NUMBER_OF_PHILOSOPHERS; i++) {
-                philosophers[i] = new Philosopher(i, chopstick[i], chopstick[i + 1  % Constants.NUMBER_OF_CHOPSTICKS]);
+                philosophers[i] = new Philosopher(i, chopSticks[i], chopSticks[(i + 1) % Constants.NUMBER_OF_CHOPSTICKS]);
                 executorService.execute(philosophers[i]);
             }
 
@@ -39,7 +39,7 @@ public class App {
             }
 
             for (Philosopher p : philosophers) {
-                System.out.println(p + " eats " + p.getEatingCounter());
+                System.out.println(p + " eat #" + p.getEatingCounter());
             }
         }
     }

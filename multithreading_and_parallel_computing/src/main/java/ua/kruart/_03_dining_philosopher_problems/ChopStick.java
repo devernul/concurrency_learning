@@ -7,11 +7,11 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by kruart on 08.10.2017.
  */
-public class Chopstick {
+public class ChopStick {
     private int id;
     private Lock lock;
 
-    public Chopstick(int id) {
+    public ChopStick(int id) {
         this.id = id;
         this.lock = new ReentrantLock();
     }

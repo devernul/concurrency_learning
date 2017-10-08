@@ -7,16 +7,16 @@ import java.util.Random;
  */
 public class Philosopher implements Runnable {
     private int id;
-    private Chopstick leftChopstick;
-    private Chopstick rightChopstick;
+    private ChopStick leftChopStick;
+    private ChopStick rightChopStick;
     private Random random;
     private int eatingCounter;
     private volatile boolean isFull = false;
 
-    public Philosopher(int id, Chopstick leftChopstick, Chopstick rightChopstick) {
+    public Philosopher(int id, ChopStick leftChopStick, ChopStick rightChopStick){
         this.id = id;
-        this.leftChopstick = leftChopstick;
-        this.rightChopstick = rightChopstick;
+        this.leftChopStick = leftChopStick;
+        this.rightChopStick = rightChopStick;
         this.random = new Random();
     }
 
@@ -26,12 +26,12 @@ public class Philosopher implements Runnable {
             while (!isFull) {
                 think();
 
-                if (leftChopstick.pickUp(this, State.LEFT)) {
-                    if (rightChopstick.pickUp(this, State.RIGHT)) {
+                if (leftChopStick.pickUp(this, State.LEFT)) {
+                    if( rightChopStick.pickUp(this, State.RIGHT)) {
                         eat();
-                        rightChopstick.putDown(this, State.RIGHT);
+                        rightChopStick.putDown(this, State.RIGHT);
                     }
-                    leftChopstick.putDown(this, State.LEFT);
+                    leftChopStick.putDown(this, State.LEFT);
                 }
             }
         } catch (InterruptedException e) {
@@ -52,10 +52,6 @@ public class Philosopher implements Runnable {
 
     public int getEatingCounter() {
         return eatingCounter;
-    }
-
-    public boolean isFull() {
-        return isFull;
     }
 
     public void setFull(boolean isFull) {
