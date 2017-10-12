@@ -11,6 +11,7 @@
     <modules>
         <module>multithreading_course</module>
         <module>multithreading_and_parallel_computing</module>
+        <module>java9_concurrency_cookbook</module>
     </modules>
 
     <properties>
