@@ -1,6 +1,6 @@
-package ua.kruart.chapter05_fork_join.recipe01_basic_forkJoinTask.task;
+package ua.kruart.chapter05_fork_join.recipe01_RecursiveAction.task;
 
-import ua.kruart.chapter05_fork_join.recipe01_basic_forkJoinTask.util.Product;
+import ua.kruart.chapter05_fork_join.recipe01_RecursiveAction.util.Product;
 
 import java.util.List;
 import java.util.concurrent.RecursiveAction;

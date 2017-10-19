@@ -1,4 +1,4 @@
-package ua.kruart.chapter05_fork_join.recipe01_basic_forkJoinTask.util;
+package ua.kruart.chapter05_fork_join.recipe01_RecursiveAction.util;
 
 import java.util.ArrayList;
 import java.util.List;
