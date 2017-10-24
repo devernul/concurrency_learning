@@ -33,6 +33,7 @@ public class MyThreadFactory implements ThreadFactory {
      */
     @Override
     public Thread newThread(Runnable r) {
+        System.out.println("Hello from newThread() method");
         return new MyThread(r, prefix + "-" + counter.getAndIncrement());
     }
 
